@@ -38,6 +38,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
                 sent = s.sendto(uaa_msg, address)
                 print('sent {} bytes back to {}'.format(
                     uaa_msg, address))
+                input("Press enter to continue")
             elif(data[0] == "UDR"):
                 #TAS sends UDR
                 uda_msg = None
@@ -49,6 +50,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
                 sent = s.sendto(uda_msg, address)
                 print('sent {} bytes back to {}'.format(
                     uda_msg, address))
+                input("Press enter to continue")
             elif(data[0] == "MAR"):
                 #PCSC-F sends MAR
                 maa_msg = None
@@ -60,6 +62,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
                 sent = s.sendto(maa_msg, address)
                 print('sent {} bytes back to {}'.format(
                     maa_msg, address))
+                input("Press enter to continue")
             elif(data[0] == "SAR"):
                 #PCSC-F sends SAR
                 saa_msg = None
@@ -71,6 +74,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
                 sent = s.sendto(maa_msg, address)
                 print('sent {} bytes back to {}'.format(
                     saa_msg, address))
+                input("Press enter to continue")
             elif(data[0] == "AUTH"):
                 auth_msg = None
                 if hss_users.get(data[1], false):
@@ -81,6 +85,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
                 sent = s.sendto(auth_msg, address)
                 print('sent {} bytes back to {}'.format(
                     auth_msg, address))
+                input("Press enter to continue")
             elif(data[0] == "UPDATE_LOCATION"):
                 location_msg = None
                 if hss_users.get(data[1], "") == "":
@@ -92,3 +97,4 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
                 sent = s.sendto(location_msg, address)
                 print('sent {} bytes back to {}'.format(
                     location_msg, address))
+                input("Press enter to continue")

@@ -19,11 +19,12 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
             #PGW sends CCR Register
             if(data[0] == "CCR"):
                 #PASAN COSAS Y LE MANDO UN CCA
-                cca_msg = "CAA ..." #PENDIENTE EL RESTO DE LOS PARÁMETROS
+                cca_msg = "CAA" 
                 cca_msg = cca_msg.encode()
                 sent = s.sendto(cca_msg, address)
                 print('sent {} bytes back to {}'.format(
                     cca_msg, address))
+                input("Press enter to continue")
             elif(data[0] == "AAR"):
                 #PCSC-F sends AAR
                 aar_msg = "AAR ..."
@@ -31,3 +32,4 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
                 sent = s.sendto(aar_msg, address)
                 print('sent {} bytes back to {}'.format(
                     aar_msg, address))
+                input("Press enter to continue")
